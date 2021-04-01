@@ -2,3 +2,28 @@ extends layout
 
 block content
   h1= title
+  
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let newspapers = [
+                    {
+                        "name": "The Times of India",
+                        "language": "English",
+                        "price": "5"                        
+                    },
+                    {
+                        "name": "Sakshi",
+                        "language": "Telugu",
+                        "price": "3"
+                    },
+                    {
+                        "name": "Patrika",
+                        "language": "Hindi",
+                        "price": "4"
+                    },                   
+                ]
+            each np in newspapers 
+                div(class="col-sm-2") #{np.name}
+                div(class="col-sm-2") #{np.language}
+                div(class="col-sm-2") #{np.price}
