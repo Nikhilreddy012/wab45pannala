@@ -23,7 +23,9 @@ block content
                         "price": "4"
                     },                   
                 ]
-            each np in newspapers 
-                div(class="col-sm-2") #{np.name}
-                div(class="col-sm-2") #{np.language}
-                div(class="col-sm-2") #{np.price}
+            each np, index in newspapers 
+                div(class="col-sm-2" onclick=`buy(${index})`) #{np.name} #{np.language} #{np.price}
+            script.
+                function buy(itemNo){
+                    alert(`You purchased Item ${itemNo+1}`)
+                }
